@@ -24,7 +24,11 @@ export default function Home({ allPostsData }) {
           boxShadow: "0 8px 20px rgba(0,0,0,0.08)",
         }}
       >
-        <p>Software developer passionate about creating technology to elevate people. I work with <strong>PHP, MySQL</strong> and{" "}  <strong>JavaScript</strong>. </p>
+        <p>
+          Software developer passionate about creating technology to elevate
+          people. I work with <strong>PHP, MySQL</strong> and{" "}
+          <strong>JavaScript</strong>.{" "}
+        </p>
       </section>
 
       {/* Blog Section */}
@@ -79,6 +83,20 @@ export default function Home({ allPostsData }) {
             </li>
           ))}
         </ul>
+      </section>
+
+      <section style={{textAlign: "center"}}>
+        <a href="https://www.linkedin.com/in/ahmedsliman/" target="_blank">
+          Linkedin
+        </a>
+        {" - "}
+        <a href="https://github.com/ahmedsliman" target="_blank">
+          Github
+        </a>
+        {" - "}
+        <a href="https://x.com/ahmeds_link" target="_blank">
+          X
+        </a>
       </section>
     </Layout>
   );
