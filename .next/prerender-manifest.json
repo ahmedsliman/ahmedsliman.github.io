@@ -1,0 +1,79 @@
+{
+  "version": 4,
+  "routes": {
+    "/": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": null,
+      "dataRoute": "/_next/data/MJJpTlzZC_J58reXfIHiQ/index.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/posts/events-in-laravel": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/posts/[id]",
+      "dataRoute": "/_next/data/MJJpTlzZC_J58reXfIHiQ/posts/events-in-laravel.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/posts/php-arch": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/posts/[id]",
+      "dataRoute": "/_next/data/MJJpTlzZC_J58reXfIHiQ/posts/php-arch.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/posts/why-mobX": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/posts/[id]",
+      "dataRoute": "/_next/data/MJJpTlzZC_J58reXfIHiQ/posts/why-mobX.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    }
+  },
+  "dynamicRoutes": {
+    "/posts/[id]": {
+      "routeRegex": "^/posts/([^/]+?)(?:/)?$",
+      "dataRoute": "/_next/data/MJJpTlzZC_J58reXfIHiQ/posts/[id].json",
+      "fallback": false,
+      "dataRouteRegex": "^/_next/data/MJJpTlzZC_J58reXfIHiQ/posts/([^/]+?)\\.json$",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    }
+  },
+  "notFoundRoutes": [],
+  "preview": {
+    "previewModeId": "9da8b28d78c3746fc735903897d4d001",
+    "previewModeSigningKey": "0be837c7f66d7dfa839edcb7d0fde5eadf5a8ab8dbcb5398b03d9c7720a2b841",
+    "previewModeEncryptionKey": "437247995f63f6f99342e84512980e140ef4640a8d3fe651eae7edffc98997d9"
+  }
+}
