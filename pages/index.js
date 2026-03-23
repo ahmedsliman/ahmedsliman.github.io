@@ -5,7 +5,35 @@ import { getSortedPostsData } from "../lib/posts";
 import Link from "next/link";
 import Date from "../components/date";
 
+const PROJECTS = [
+  {
+    name: "Concept Atlas",
+    url: "https://ahmedsliman.github.io/concept-atlas/",
+    description: "Interactive visual explorer for DDD concepts and software design patterns.",
+    hidden: false,
+  },
+  {
+    name: "Wordle DE",
+    url: "https://ahmedsliman.github.io/wordle-de/",
+    description: "German Wordle with single-player and 2-player online multiplayer modes.",
+    hidden: false,
+  },
+  {
+    name: "Terminal Gym",
+    url: "https://github.com/ahmedsliman/terminal-gym",
+    description: "Learn Linux by doing — 17 hands-on missions straight from your terminal.",
+    hidden: false,
+  },
+  {
+    name: "Security Gym",
+    url: "https://github.com/ahmedsliman/security-gym",
+    description: "Security challenges and exercises for hands-on learning.",
+    hidden: true,
+  },
+];
+
 export default function Home({ allPostsData }) {
+  const visibleProjects = PROJECTS.filter((p) => !p.hidden);
   return (
     <Layout home>
       <Head>
@@ -29,6 +57,67 @@ export default function Home({ allPostsData }) {
           people. I work with <strong>PHP, MySQL</strong> and{" "}
           <strong>JavaScript</strong>.{" "}
         </p>
+      </section>
+
+      {/* Projects Section */}
+      <section
+        style={{ maxWidth: "900px", margin: "3rem auto", padding: "0 1rem" }}
+      >
+        <h2
+          style={{
+            textAlign: "center",
+            fontSize: "2rem",
+            marginBottom: "2rem",
+            color: "#111",
+          }}
+        >
+          Projects
+        </h2>
+        <ul
+          style={{
+            listStyle: "none",
+            padding: 0,
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fill, minmax(260px, 1fr))",
+            gap: "1rem",
+          }}
+        >
+          {visibleProjects.map((project) => (
+            <li
+              key={project.name}
+              style={{
+                padding: "1rem 1.5rem",
+                borderRadius: "10px",
+                backgroundColor: "#fff",
+                boxShadow: "0 6px 15px rgba(0,0,0,0.05)",
+              }}
+            >
+              <a
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  fontWeight: "600",
+                  fontSize: "1.1rem",
+                  color: "#0070f3",
+                  textDecoration: "none",
+                }}
+              >
+                {project.name}
+              </a>
+              <p
+                style={{
+                  color: "#666",
+                  fontSize: "0.85rem",
+                  marginTop: "0.25rem",
+                  marginBottom: 0,
+                }}
+              >
+                {project.description}
+              </p>
+            </li>
+          ))}
+        </ul>
       </section>
 
       {/* Blog Section */}
