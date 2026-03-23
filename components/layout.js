@@ -1,73 +1,51 @@
 import Head from 'next/head';
-import Image from 'next/image';
 import styles from './layout.module.css';
-import utilStyles from '../styles/utils.module.css';
 import Link from 'next/link';
 
 const name = 'Ahmed Soliman';
-export const siteTitle = 'Ahmed Soliman\'s Portfolio';
+export const siteTitle = 'Ahmed Soliman';
 
 export default function Layout({ children, home }) {
   return (
     <div className={styles.container}>
       <Head>
         <link rel="icon" href="/favicon.ico" />
-        <meta
-          name="description"
-          content="Learn how to build a personal website using Next.js"
-        />
-        <meta
-          property="og:image"
-          content={`https://og-image.vercel.app/${encodeURI(
-            siteTitle,
-          )}.png?theme=light&md=0&fontSize=75px&images=https%3A%2F%2Fassets.vercel.com%2Fimage%2Fupload%2Ffront%2Fassets%2Fdesign%2Fnextjs-black-logo.svg`}
-        />
-        <meta name="og:title" content={siteTitle} />
-        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="og:image" content="https://github.com/ahmedsliman.png" />
+        <meta name="twitter:image" content="https://github.com/ahmedsliman.png" />
       </Head>
+
       <header className={styles.header}>
-        {home ? (
-          <>
-            {/* <Image
-              priority
-              src="/../public/images/my-pic.jpeg"
-              className={utilStyles.borderCircle}
-              height={144}
-              width={144}
-              alt={name}
-            /> */}
-            <h1 className={utilStyles.heading2Xl}>{name}</h1>
-          </>
-        ) : (
-          <>
-            {/* <Link href="/">
-              <a>
-                <Image
-                  priority
-                  src="/../public/images/my-pic.jpeg"
-                  className={utilStyles.borderCircle}
-                  height={108}
-                  width={108}
-                  alt={name}
-                />
-              </a>
-            </Link> */}
-            <h2 className={utilStyles.headingLg}>
-              <Link href="/" legacyBehavior>
-                <a className={utilStyles.colorInherit}>{name}</a>
-              </Link>
-            </h2>
-          </>
-        )}
+        <div className={styles.headerLeft}>
+          {home ? (
+            <span className={styles.headerName}>{name}</span>
+          ) : (
+            <Link href="/" className={styles.headerName}>{name}</Link>
+          )}
+          <div className={styles.headerRole}>Full Stack Software Engineer · Germany</div>
+        </div>
+        <nav className={styles.nav}>
+          <a href="https://www.linkedin.com/in/ahmedsliman/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://github.com/ahmedsliman" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://x.com/ahmeds_link" target="_blank" rel="noopener noreferrer">X</a>
+        </nav>
       </header>
+
       <main>{children}</main>
+
       {!home && (
         <div className={styles.backToHome}>
-          <Link href="/" legacyBehavior>
-            <a>← Back to home</a>
-          </Link>
+          <Link href="/">← Back</Link>
         </div>
       )}
+
+      <footer className={styles.footer}>
+        <span>© {new Date().getFullYear()} Ahmed Soliman</span>
+        <span className={styles.footerLinks}>
+          <a href="https://www.linkedin.com/in/ahmedsliman/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://github.com/ahmedsliman" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://x.com/ahmeds_link" target="_blank" rel="noopener noreferrer">X</a>
+        </span>
+      </footer>
     </div>
   );
 }

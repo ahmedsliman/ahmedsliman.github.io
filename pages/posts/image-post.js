@@ -1,12 +1,16 @@
+import Layout from '../../components/layout';
 import Image from 'next/image';
 
-const ImagePost = () => (
-  <Image
-    src="/images/my-pic.jpeg" // Route of the image file
-    height={144} // Desired size with correct aspect ratio
-    width={144} // Desired size with correct aspect ratio
-    alt="My First NextJS App / Images"
-  />
-);
-
-export default ImagePost;
+export default function ImagePost() {
+  return (
+    <Layout>
+      <Image
+        src="/images/my-pic.jpeg"
+        height={144}
+        width={144}
+        alt="Ahmed Soliman"
+        style={{ borderRadius: '50%' }}
+      />
+    </Layout>
+  );
+}

@@ -1,3 +1,6 @@
 .next/
 out/
 node_modules/
+.claude/
+.kiro/
+.vscode/
