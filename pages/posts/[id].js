@@ -1,13 +1,47 @@
 import Layout from "../../components/layout";
 import { getAllPostIds, getPostData } from "../../lib/posts";
 import Date from "../../components/date";
+import Head from "next/head";
+import { useEffect } from "react";
 
 export default function Post({ postData }) {
+  const url = `https://ahmedsliman.github.io/posts/${postData.id}`;
+
+  useEffect(() => {
+    const schema = {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": postData.title,
+      "description": postData.excerpt,
+      "datePublished": postData.date,
+      "url": url,
+      "author": {
+        "@type": "Person",
+        "name": "Ahmed Soliman",
+        "url": "https://ahmedsliman.github.io"
+      }
+    };
+    const script = document.createElement("script");
+    script.type = "application/ld+json";
+    script.textContent = JSON.stringify(schema);
+    document.head.appendChild(script);
+    return () => { if (document.head.contains(script)) document.head.removeChild(script); };
+  }, [postData.id]);
+
   return (
     <Layout>
-      <head>
-        <title>{postData.title}</title>
-      </head>
+      <Head>
+        <title>{postData.title} | Ahmed Soliman</title>
+        <meta name="description" content={postData.excerpt} />
+        <link rel="canonical" href={url} />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content={url} />
+        <meta property="og:title" content={`${postData.title} | Ahmed Soliman`} />
+        <meta property="og:description" content={postData.excerpt} />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content={`${postData.title} | Ahmed Soliman`} />
+        <meta name="twitter:description" content={postData.excerpt} />
+      </Head>
       <article style={{ maxWidth: "min(620px, 100%)" }}>
         <h1 style={{
           fontFamily: "'IBM Plex Mono', monospace",

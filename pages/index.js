@@ -34,13 +34,46 @@ const PROJECTS = [
 
 const STACK = ["PHP", "Laravel", "Symfony", "JavaScript", "Vue", "TypeScript"];
 
+const PERSON_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Ahmed Soliman",
+  "url": "https://ahmedsliman.github.io",
+  "jobTitle": "Full Stack Software Engineer",
+  "worksFor": { "@type": "Organization", "name": "epay, a Euronet Company" },
+  "address": { "@type": "PostalAddress", "addressCountry": "DE" },
+  "knowsAbout": ["PHP", "Laravel", "Symfony", "JavaScript", "Vue.js", "TypeScript"],
+  "sameAs": [
+    "https://www.linkedin.com/in/ahmedsliman/",
+    "https://github.com/ahmedsliman",
+    "https://x.com/ahmeds_link"
+  ]
+};
+
 export default function Home({ allPostsData }) {
   const visibleProjects = PROJECTS.filter((p) => !p.hidden);
+
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.type = "application/ld+json";
+    script.textContent = JSON.stringify(PERSON_SCHEMA);
+    document.head.appendChild(script);
+    return () => { if (document.head.contains(script)) document.head.removeChild(script); };
+  }, []);
 
   return (
     <Layout home>
       <Head>
-        <title>{siteTitle}</title>
+        <title>Ahmed Soliman — Full Stack Software Engineer</title>
+        <meta name="description" content="Full Stack Software Engineer based in Germany. Building with PHP, Laravel, Symfony, JavaScript, Vue, and TypeScript. Currently at epay." />
+        <link rel="canonical" href="https://ahmedsliman.github.io/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://ahmedsliman.github.io/" />
+        <meta property="og:title" content="Ahmed Soliman — Full Stack Software Engineer" />
+        <meta property="og:description" content="Full Stack Software Engineer based in Germany. Building with PHP, Laravel, Symfony, JavaScript, Vue, and TypeScript." />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Ahmed Soliman — Full Stack Software Engineer" />
+        <meta name="twitter:description" content="Full Stack Software Engineer based in Germany. Building with PHP, Laravel, Symfony, JavaScript, Vue, and TypeScript." />
       </Head>
 
       {/* Bio */}
