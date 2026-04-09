@@ -10,24 +10,36 @@ const PROJECTS = [
     name: "Concept Atlas",
     url: "https://ahmedsliman.github.io/concept-atlas/",
     description: "Interactive visual explorer for DDD concepts and software design patterns.",
+    emoji: "🗺️",
+    accentColor: "#8b5cf6",
+    accentBg: "#faf5ff",
     hidden: false,
   },
   {
     name: "Wordle DE",
     url: "https://ahmedsliman.github.io/wordle-de/",
     description: "German Wordle with single-player and 2-player online multiplayer modes.",
+    emoji: "🎮",
+    accentColor: "#06b6d4",
+    accentBg: "#ecfdf5",
     hidden: false,
   },
   {
     name: "Terminal Gym",
     url: "https://ahmedsliman.github.io/terminal-gym/",
     description: "Learn Linux by doing — 17 hands-on missions straight from your terminal.",
+    emoji: "💻",
+    accentColor: "#10b981",
+    accentBg: "#f0fdf4",
     hidden: false,
   },
   {
     name: "Security Gym",
     url: "https://github.com/ahmedsliman/security-gym",
     description: "Security challenges and exercises for hands-on learning.",
+    emoji: "🔐",
+    accentColor: "#ef4444",
+    accentBg: "#fef2f2",
     hidden: true,
   },
 ];
@@ -132,25 +144,31 @@ export default function Home({ allPostsData }) {
                 >
                   <div className="project-card"
                     style={{
-                      border: "1px solid var(--border)",
+                      border: `2px solid ${project.accentColor}`,
                       borderRadius: "8px",
                       padding: "1rem 1.1rem",
-                      background: "var(--bg)",
-                      transition: "border-color 0.15s, box-shadow 0.15s",
+                      background: project.accentBg,
+                      transition: "all 0.2s ease",
+                      transform: "translateY(0)",
                     }}
                     onMouseEnter={e => {
-                      e.currentTarget.style.borderColor = "var(--accent)";
-                      e.currentTarget.style.boxShadow = "0 0 0 3px var(--accent-bg)";
+                      e.currentTarget.style.borderColor = project.accentColor;
+                      e.currentTarget.style.boxShadow = `0 8px 16px ${project.accentColor}20`;
+                      e.currentTarget.style.transform = "translateY(-2px)";
                     }}
                     onMouseLeave={e => {
-                      e.currentTarget.style.borderColor = "var(--border)";
+                      e.currentTarget.style.borderColor = project.accentColor;
                       e.currentTarget.style.boxShadow = "none";
+                      e.currentTarget.style.transform = "translateY(0)";
                     }}
                   >
-                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "0.35rem" }}>
-                      <span style={{ fontWeight: "600", fontSize: "0.9rem", color: "var(--text)" }}>
-                        {project.name}
-                      </span>
+                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "0.5rem" }}>
+                      <div style={{ display: "flex", alignItems: "center", gap: "0.6rem", flex: 1 }}>
+                        <span style={{ fontSize: "1.4rem" }}>{project.emoji}</span>
+                        <span style={{ fontWeight: "600", fontSize: "0.9rem", color: "var(--text)" }}>
+                          {project.name}
+                        </span>
+                      </div>
                       <svg width="12" height="12" viewBox="0 0 12 12" fill="none" style={{ flexShrink: 0, opacity: 0.4 }}>
                         <path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                       </svg>
