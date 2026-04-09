@@ -20,7 +20,7 @@ const PROJECTS = [
   },
   {
     name: "Terminal Gym",
-    url: "https://github.com/ahmedsliman/terminal-gym",
+    url: "https://ahmedsliman.github.io/terminal-gym/",
     description: "Learn Linux by doing — 17 hands-on missions straight from your terminal.",
     hidden: false,
   },
