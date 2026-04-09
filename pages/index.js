@@ -92,13 +92,13 @@ export default function Home({ allPostsData }) {
 
       {/* Bio */}
       <div style={{ marginBottom: "2.5rem" }}>
-        <p style={{ margin: "0 0 1rem", fontSize: "0.95rem", lineHeight: 1.7, color: "var(--muted)", fontWeight: 500 }}>
+        <p style={{ margin: "0 0 1rem", fontSize: "1.05rem", lineHeight: 1.7, color: "var(--muted)", fontWeight: 500 }}>
           Currently at <strong style={{ color: "var(--text)", fontWeight: "600" }}>epay</strong>, building payment solutions.
         </p>
         <div style={{ display: "flex", gap: "0.6rem", flexWrap: "wrap", marginBottom: "1.2rem" }}>
           {STACK.map((tech) => (
             <span key={tech} style={{
-              fontSize: "0.8rem",
+              fontSize: "0.9rem",
               fontWeight: "600",
               color: "var(--accent)",
               background: "var(--accent-bg)",
@@ -115,7 +115,7 @@ export default function Home({ allPostsData }) {
           href="https://www.linkedin.com/in/ahmedsliman/"
           target="_blank"
           rel="noopener noreferrer"
-          style={{ fontSize: "0.9rem", fontWeight: "600", color: "var(--accent)", lineHeight: 1.5 }}
+          style={{ fontSize: "1rem", fontWeight: "600", color: "var(--accent)", lineHeight: 1.5 }}
         >
           Get in touch →
         </a>
@@ -127,7 +127,7 @@ export default function Home({ allPostsData }) {
         {/* Projects — bordered cards */}
         <section>
           <div style={{
-            fontSize: "0.75rem",
+            fontSize: "0.85rem",
             fontWeight: "800",
             letterSpacing: "0.12em",
             textTransform: "uppercase",
@@ -163,13 +163,13 @@ export default function Home({ allPostsData }) {
                 >
                   <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "0.6rem" }}>
                     <div style={{ display: "flex", alignItems: "center", gap: "0.7rem", flex: 1 }}>
-                      <span style={{ fontSize: "1.5rem" }}>{project.emoji}</span>
-                      <span style={{ fontWeight: "700", fontSize: "0.95rem", color: "var(--text)", lineHeight: 1.4 }}>
+                      <span style={{ fontSize: "1.6rem" }}>{project.emoji}</span>
+                      <span style={{ fontWeight: "700", fontSize: "1.05rem", color: "var(--text)", lineHeight: 1.4 }}>
                         {project.name}
                       </span>
                     </div>
                   </div>
-                  <p style={{ margin: "0 0 0.8rem 0", fontSize: "0.85rem", color: "var(--muted)", lineHeight: 1.65, letterSpacing: "0.005em" }}>
+                  <p style={{ margin: "0 0 0.8rem 0", fontSize: "0.95rem", color: "var(--muted)", lineHeight: 1.65, letterSpacing: "0.005em" }}>
                     {project.description}
                   </p>
                   <div style={{ display: "flex", gap: "0.6rem", flexWrap: "wrap" }}>
@@ -179,7 +179,7 @@ export default function Home({ allPostsData }) {
                         target="_blank"
                         rel="noopener noreferrer"
                         style={{
-                          fontSize: "0.8rem",
+                          fontSize: "0.9rem",
                           fontWeight: "700",
                           color: project.accentColor,
                           textDecoration: "none",
@@ -211,7 +211,7 @@ export default function Home({ allPostsData }) {
                         target="_blank"
                         rel="noopener noreferrer"
                         style={{
-                          fontSize: "0.8rem",
+                          fontSize: "0.9rem",
                           fontWeight: "700",
                           color: "var(--muted)",
                           textDecoration: "none",
@@ -243,7 +243,7 @@ export default function Home({ allPostsData }) {
                         target="_blank"
                         rel="noopener noreferrer"
                         style={{
-                          fontSize: "0.8rem",
+                          fontSize: "0.9rem",
                           fontWeight: "700",
                           color: project.accentColor,
                           textDecoration: "none",
@@ -279,7 +279,7 @@ export default function Home({ allPostsData }) {
         {/* Writing — clean table rows */}
         <section>
           <div style={{
-            fontSize: "0.75rem",
+            fontSize: "0.85rem",
             fontWeight: "800",
             letterSpacing: "0.12em",
             textTransform: "uppercase",
@@ -305,7 +305,7 @@ export default function Home({ allPostsData }) {
                 <Link
                   href={`/posts/${id}`}
                   style={{
-                    fontSize: "0.95rem",
+                    fontSize: "1.05rem",
                     fontWeight: "600",
                     color: "var(--text)",
                     flexShrink: 1,
@@ -318,7 +318,7 @@ export default function Home({ allPostsData }) {
                 >
                   {title}
                 </Link>
-                <span style={{ fontSize: "0.8rem", color: "var(--muted)", whiteSpace: "nowrap", flexShrink: 0, lineHeight: 1.4 }}>
+                <span style={{ fontSize: "0.9rem", color: "var(--muted)", whiteSpace: "nowrap", flexShrink: 0, lineHeight: 1.4 }}>
                   <Date dateString={date} short />
                 </span>
               </li>
