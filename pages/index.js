@@ -92,19 +92,20 @@ export default function Home({ allPostsData }) {
 
       {/* Bio */}
       <div style={{ marginBottom: "2.5rem" }}>
-        <p style={{ margin: "0 0 0.85rem", fontSize: "0.85rem", color: "var(--muted)" }}>
-          Currently at <strong style={{ color: "var(--text)", fontWeight: "500" }}>epay</strong>, building payment solutions.
+        <p style={{ margin: "0 0 1rem", fontSize: "0.95rem", lineHeight: 1.7, color: "var(--muted)", fontWeight: 500 }}>
+          Currently at <strong style={{ color: "var(--text)", fontWeight: "600" }}>epay</strong>, building payment solutions.
         </p>
-        <div style={{ display: "flex", gap: "0.5rem", flexWrap: "wrap", marginBottom: "1rem" }}>
+        <div style={{ display: "flex", gap: "0.6rem", flexWrap: "wrap", marginBottom: "1.2rem" }}>
           {STACK.map((tech) => (
             <span key={tech} style={{
-              fontSize: "0.75rem",
+              fontSize: "0.8rem",
               fontWeight: "600",
               color: "var(--accent)",
               background: "var(--accent-bg)",
-              padding: "0.2rem 0.65rem",
+              padding: "0.3rem 0.75rem",
               borderRadius: "999px",
-              letterSpacing: "0.01em",
+              letterSpacing: "0.02em",
+              lineHeight: 1.4,
             }}>
               {tech}
             </span>
@@ -114,7 +115,7 @@ export default function Home({ allPostsData }) {
           href="https://www.linkedin.com/in/ahmedsliman/"
           target="_blank"
           rel="noopener noreferrer"
-          style={{ fontSize: "0.82rem", fontWeight: "500", color: "var(--accent)" }}
+          style={{ fontSize: "0.9rem", fontWeight: "600", color: "var(--accent)", lineHeight: 1.5 }}
         >
           Get in touch →
         </a>
@@ -126,16 +127,17 @@ export default function Home({ allPostsData }) {
         {/* Projects — bordered cards */}
         <section>
           <div style={{
-            fontSize: "0.7rem",
-            fontWeight: "700",
-            letterSpacing: "0.1em",
+            fontSize: "0.75rem",
+            fontWeight: "800",
+            letterSpacing: "0.12em",
             textTransform: "uppercase",
             color: "var(--muted)",
-            marginBottom: "1rem",
+            marginBottom: "1.2rem",
+            lineHeight: 1.4,
           }}>
             Projects
           </div>
-          <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.75rem" }}>
+          <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.9rem" }}>
             {visibleProjects.map((project) => (
               <li key={project.name}>
                 <div
@@ -143,7 +145,7 @@ export default function Home({ allPostsData }) {
                   style={{
                     border: `2px solid ${project.accentColor}`,
                     borderRadius: "8px",
-                    padding: "1rem 1.1rem",
+                    padding: "1.1rem 1.3rem",
                     background: project.accentBg,
                     transition: "all 0.2s ease",
                     transform: "translateY(0)",
@@ -159,15 +161,15 @@ export default function Home({ allPostsData }) {
                     e.currentTarget.style.transform = "translateY(0)";
                   }}
                 >
-                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "0.5rem" }}>
-                    <div style={{ display: "flex", alignItems: "center", gap: "0.6rem", flex: 1 }}>
-                      <span style={{ fontSize: "1.4rem" }}>{project.emoji}</span>
-                      <span style={{ fontWeight: "600", fontSize: "0.9rem", color: "var(--text)" }}>
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "0.6rem" }}>
+                    <div style={{ display: "flex", alignItems: "center", gap: "0.7rem", flex: 1 }}>
+                      <span style={{ fontSize: "1.5rem" }}>{project.emoji}</span>
+                      <span style={{ fontWeight: "700", fontSize: "0.95rem", color: "var(--text)", lineHeight: 1.4 }}>
                         {project.name}
                       </span>
                     </div>
                   </div>
-                  <p style={{ margin: "0 0 0.7rem 0", fontSize: "0.78rem", color: "var(--muted)", lineHeight: 1.55 }}>
+                  <p style={{ margin: "0 0 0.8rem 0", fontSize: "0.85rem", color: "var(--muted)", lineHeight: 1.65, letterSpacing: "0.005em" }}>
                     {project.description}
                   </p>
                   <div style={{ display: "flex", gap: "0.6rem", flexWrap: "wrap" }}>
@@ -177,17 +179,19 @@ export default function Home({ allPostsData }) {
                         target="_blank"
                         rel="noopener noreferrer"
                         style={{
-                          fontSize: "0.75rem",
-                          fontWeight: "600",
+                          fontSize: "0.8rem",
+                          fontWeight: "700",
                           color: project.accentColor,
                           textDecoration: "none",
                           display: "inline-flex",
                           alignItems: "center",
                           gap: "0.3rem",
-                          padding: "0.35rem 0.7rem",
+                          padding: "0.4rem 0.8rem",
                           borderRadius: "4px",
                           background: "rgba(255,255,255,0.5)",
                           transition: "all 0.15s",
+                          lineHeight: 1.4,
+                          letterSpacing: "0.01em",
                         }}
                         onMouseEnter={e => {
                           e.currentTarget.style.background = project.accentColor;
@@ -207,17 +211,19 @@ export default function Home({ allPostsData }) {
                         target="_blank"
                         rel="noopener noreferrer"
                         style={{
-                          fontSize: "0.75rem",
-                          fontWeight: "600",
+                          fontSize: "0.8rem",
+                          fontWeight: "700",
                           color: "var(--muted)",
                           textDecoration: "none",
                           display: "inline-flex",
                           alignItems: "center",
                           gap: "0.3rem",
-                          padding: "0.35rem 0.7rem",
+                          padding: "0.4rem 0.8rem",
                           borderRadius: "4px",
                           background: "rgba(0,0,0,0.03)",
                           transition: "all 0.15s",
+                          lineHeight: 1.4,
+                          letterSpacing: "0.01em",
                         }}
                         onMouseEnter={e => {
                           e.currentTarget.style.background = "rgba(0,0,0,0.1)";
@@ -237,17 +243,19 @@ export default function Home({ allPostsData }) {
                         target="_blank"
                         rel="noopener noreferrer"
                         style={{
-                          fontSize: "0.75rem",
-                          fontWeight: "600",
+                          fontSize: "0.8rem",
+                          fontWeight: "700",
                           color: project.accentColor,
                           textDecoration: "none",
                           display: "inline-flex",
                           alignItems: "center",
                           gap: "0.3rem",
-                          padding: "0.35rem 0.7rem",
+                          padding: "0.4rem 0.8rem",
                           borderRadius: "4px",
                           background: "rgba(255,255,255,0.5)",
                           transition: "all 0.15s",
+                          lineHeight: 1.4,
+                          letterSpacing: "0.01em",
                         }}
                         onMouseEnter={e => {
                           e.currentTarget.style.background = project.accentColor;
@@ -271,12 +279,13 @@ export default function Home({ allPostsData }) {
         {/* Writing — clean table rows */}
         <section>
           <div style={{
-            fontSize: "0.7rem",
-            fontWeight: "700",
-            letterSpacing: "0.1em",
+            fontSize: "0.75rem",
+            fontWeight: "800",
+            letterSpacing: "0.12em",
             textTransform: "uppercase",
             color: "var(--muted)",
-            marginBottom: "1rem",
+            marginBottom: "1.2rem",
+            lineHeight: 1.4,
           }}>
             Writing
           </div>
@@ -286,29 +295,30 @@ export default function Home({ allPostsData }) {
                 key={id}
                 style={{
                   borderTop: "1px solid var(--border)",
-                  padding: "0.85rem 0",
+                  padding: "1rem 0",
                   display: "flex",
                   justifyContent: "space-between",
                   alignItems: "baseline",
-                  gap: "1rem",
+                  gap: "1.2rem",
                 }}
               >
                 <Link
                   href={`/posts/${id}`}
                   style={{
-                    fontSize: "0.9rem",
+                    fontSize: "0.95rem",
                     fontWeight: "600",
                     color: "var(--text)",
                     flexShrink: 1,
-                    lineHeight: 1.4,
+                    lineHeight: 1.55,
                     textDecoration: "none",
+                    letterSpacing: "0.005em",
                   }}
                   onMouseEnter={e => e.currentTarget.style.color = "var(--accent)"}
                   onMouseLeave={e => e.currentTarget.style.color = "var(--text)"}
                 >
                   {title}
                 </Link>
-                <span style={{ fontSize: "0.72rem", color: "var(--muted)", whiteSpace: "nowrap", flexShrink: 0 }}>
+                <span style={{ fontSize: "0.8rem", color: "var(--muted)", whiteSpace: "nowrap", flexShrink: 0, lineHeight: 1.4 }}>
                   <Date dateString={date} short />
                 </span>
               </li>
