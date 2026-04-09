@@ -26,11 +26,13 @@ const PROJECTS = [
   },
   {
     name: "Terminal Gym",
-    url: "https://ahmedsliman.github.io/terminal-gym/",
-    description: "Learn Linux by doing — 17 hands-on missions straight from your terminal.",
+    url: "https://terminal-gym.onrender.com/",
+    description: "Learn Linux by doing — 17 hands-on missions straight from your terminal. Web interface included.",
     emoji: "💻",
     accentColor: "#10b981",
     accentBg: "#f0fdf4",
+    liveUrl: "https://terminal-gym.onrender.com/",
+    githubUrl: "https://github.com/ahmedsliman/terminal-gym",
     hidden: false,
   },
   {
@@ -136,48 +138,131 @@ export default function Home({ allPostsData }) {
           <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.75rem" }}>
             {visibleProjects.map((project) => (
               <li key={project.name}>
-                <a
-                  href={project.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ textDecoration: "none", display: "block" }}
+                <div
+                  className="project-card"
+                  style={{
+                    border: `2px solid ${project.accentColor}`,
+                    borderRadius: "8px",
+                    padding: "1rem 1.1rem",
+                    background: project.accentBg,
+                    transition: "all 0.2s ease",
+                    transform: "translateY(0)",
+                  }}
+                  onMouseEnter={e => {
+                    e.currentTarget.style.borderColor = project.accentColor;
+                    e.currentTarget.style.boxShadow = `0 8px 16px ${project.accentColor}20`;
+                    e.currentTarget.style.transform = "translateY(-2px)";
+                  }}
+                  onMouseLeave={e => {
+                    e.currentTarget.style.borderColor = project.accentColor;
+                    e.currentTarget.style.boxShadow = "none";
+                    e.currentTarget.style.transform = "translateY(0)";
+                  }}
                 >
-                  <div className="project-card"
-                    style={{
-                      border: `2px solid ${project.accentColor}`,
-                      borderRadius: "8px",
-                      padding: "1rem 1.1rem",
-                      background: project.accentBg,
-                      transition: "all 0.2s ease",
-                      transform: "translateY(0)",
-                    }}
-                    onMouseEnter={e => {
-                      e.currentTarget.style.borderColor = project.accentColor;
-                      e.currentTarget.style.boxShadow = `0 8px 16px ${project.accentColor}20`;
-                      e.currentTarget.style.transform = "translateY(-2px)";
-                    }}
-                    onMouseLeave={e => {
-                      e.currentTarget.style.borderColor = project.accentColor;
-                      e.currentTarget.style.boxShadow = "none";
-                      e.currentTarget.style.transform = "translateY(0)";
-                    }}
-                  >
-                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "0.5rem" }}>
-                      <div style={{ display: "flex", alignItems: "center", gap: "0.6rem", flex: 1 }}>
-                        <span style={{ fontSize: "1.4rem" }}>{project.emoji}</span>
-                        <span style={{ fontWeight: "600", fontSize: "0.9rem", color: "var(--text)" }}>
-                          {project.name}
-                        </span>
-                      </div>
-                      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" style={{ flexShrink: 0, opacity: 0.4 }}>
-                        <path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                      </svg>
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "0.5rem" }}>
+                    <div style={{ display: "flex", alignItems: "center", gap: "0.6rem", flex: 1 }}>
+                      <span style={{ fontSize: "1.4rem" }}>{project.emoji}</span>
+                      <span style={{ fontWeight: "600", fontSize: "0.9rem", color: "var(--text)" }}>
+                        {project.name}
+                      </span>
                     </div>
-                    <p style={{ margin: 0, fontSize: "0.78rem", color: "var(--muted)", lineHeight: 1.55 }}>
-                      {project.description}
-                    </p>
                   </div>
-                </a>
+                  <p style={{ margin: "0 0 0.7rem 0", fontSize: "0.78rem", color: "var(--muted)", lineHeight: 1.55 }}>
+                    {project.description}
+                  </p>
+                  <div style={{ display: "flex", gap: "0.6rem", flexWrap: "wrap" }}>
+                    {project.liveUrl && (
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{
+                          fontSize: "0.75rem",
+                          fontWeight: "600",
+                          color: project.accentColor,
+                          textDecoration: "none",
+                          display: "inline-flex",
+                          alignItems: "center",
+                          gap: "0.3rem",
+                          padding: "0.35rem 0.7rem",
+                          borderRadius: "4px",
+                          background: "rgba(255,255,255,0.5)",
+                          transition: "all 0.15s",
+                        }}
+                        onMouseEnter={e => {
+                          e.currentTarget.style.background = project.accentColor;
+                          e.currentTarget.style.color = "white";
+                        }}
+                        onMouseLeave={e => {
+                          e.currentTarget.style.background = "rgba(255,255,255,0.5)";
+                          e.currentTarget.style.color = project.accentColor;
+                        }}
+                      >
+                        Live Demo →
+                      </a>
+                    )}
+                    {project.githubUrl && (
+                      <a
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{
+                          fontSize: "0.75rem",
+                          fontWeight: "600",
+                          color: "var(--muted)",
+                          textDecoration: "none",
+                          display: "inline-flex",
+                          alignItems: "center",
+                          gap: "0.3rem",
+                          padding: "0.35rem 0.7rem",
+                          borderRadius: "4px",
+                          background: "rgba(0,0,0,0.03)",
+                          transition: "all 0.15s",
+                        }}
+                        onMouseEnter={e => {
+                          e.currentTarget.style.background = "rgba(0,0,0,0.1)";
+                          e.currentTarget.style.color = "var(--text)";
+                        }}
+                        onMouseLeave={e => {
+                          e.currentTarget.style.background = "rgba(0,0,0,0.03)";
+                          e.currentTarget.style.color = "var(--muted)";
+                        }}
+                      >
+                        Source
+                      </a>
+                    )}
+                    {!project.liveUrl && !project.githubUrl && (
+                      <a
+                        href={project.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{
+                          fontSize: "0.75rem",
+                          fontWeight: "600",
+                          color: project.accentColor,
+                          textDecoration: "none",
+                          display: "inline-flex",
+                          alignItems: "center",
+                          gap: "0.3rem",
+                          padding: "0.35rem 0.7rem",
+                          borderRadius: "4px",
+                          background: "rgba(255,255,255,0.5)",
+                          transition: "all 0.15s",
+                        }}
+                        onMouseEnter={e => {
+                          e.currentTarget.style.background = project.accentColor;
+                          e.currentTarget.style.color = "white";
+                        }}
+                        onMouseLeave={e => {
+                          e.currentTarget.style.background = "rgba(255,255,255,0.5)";
+                          e.currentTarget.style.color = project.accentColor;
+                        }}
+                      >
+                        Visit →
+                      </a>
+                    )}
+                  </div>
+                </div>
               </li>
             ))}
           </ul>
